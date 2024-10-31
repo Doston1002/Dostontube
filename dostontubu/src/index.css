@@ -15,6 +15,10 @@ height: 1px;
 ::-webkit-scrollbar-track{
   background-color: transparent;
 }
+a{
+  text-decoration: none;
+  color: black;
+}
 .search-bar{
   border: none;
   outline: none;
@@ -43,8 +47,16 @@ height: 1px;
 .category-btn:hover span{
   color: wheat !important;
 }
+.react-player{
+  height: 77vh !important;
+  width: 100% !important;
+}
 @media screen  and (max-width:600px) {
   .search-bar{
     width: 200px;
+  }
+  .react-player{
+    height: 45vh !important;
+   
   }
 }
