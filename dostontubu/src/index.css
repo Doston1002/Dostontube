@@ -43,3 +43,8 @@ height: 1px;
 .category-btn:hover span{
   color: wheat !important;
 }
+@media screen  and (max-width:600px) {
+  .search-bar{
+    width: 200px;
+  }
+}
