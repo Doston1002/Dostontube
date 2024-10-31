@@ -1,30 +1,26 @@
-import { Box, Stack } from '@mui/material'
-import React from 'react'
+import { Stack, Box } from '@mui/material'
+import { VideoCard, ChannelCard, Loader } from '../'
 
-import {VideoCard, ChannelCard} from '../'
+const Videos = ({ videos }) => {
+	if (!videos.length) return <Loader />
 
-
-const Videos = ({videos}) => {
-  return (
-<>
-
-   <Stack 
-   width={'100%'}
-   direction={'row'}
-   flexWrap={'wrap'}
-   justifyContent={'start'}
-   alignItems={'center'}
-   gap={2}
-   >
-{videos.map( item=>(
-    <Box key={item.id.videoId}>
-        {item.id.channelId && <VideoCard video={item}/>}
-        {item.id.videoId && <ChannelCard video={item}/>}
-    </Box>
-))}
-   </Stack>
-   </>
-  )
+	return (
+		<Stack
+			width={'100%'}
+			direction={'row'}
+			flexWrap='wrap'
+			justifyContent='start'
+			alignItems='start'
+			gap={2}
+		>
+			{videos.map((item, idx) => (
+				<Box key={idx}>
+					{item.id.videoId && <VideoCard video={item} />}
+					{item.id.channelId && <ChannelCard video={item} />}
+				</Box>
+			))}
+		</Stack>
+	)
 }
 
 export default Videos
